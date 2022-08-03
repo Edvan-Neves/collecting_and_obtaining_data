@@ -1,0 +1,14 @@
+-- conta quantidade de jogadores de portugal 
+db.dados_xadrez.find({'country':{$regex:"PT"}}).count()
+-- conta quantidade de seguidores de rafael leitao 
+db.dados_xadrez.find({'followers':'Rafael Leitao'}).count()
+-- conta quantidade de streamers 
+db.dados_xadrez.find('is_streamer':'True'}).count()
+-- conta quantidade de status distintos na database
+db.dados_xadrez.distinct("status")
+-- conta quantos paises distintos na base 
+db.dados_xadrez.distinct("country").length
+-- conta jogadores com mais de 30K de seguidores 
+db.dados_xadrez.find({'followers':{$gt 30000}}).count()
+-- conta quantas pessoas são staffs 
+db.dados_xadrex.find({'status':'staff'}).count()
